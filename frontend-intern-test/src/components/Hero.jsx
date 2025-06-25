@@ -1,6 +1,5 @@
 import React from "react";
-import heroImage from "../assets/wallpaperflare.com_wallpaper (3).jpg"; // Update with your actual image path
-
+import heroImage from "../assets/wallpaperflare.com_wallpaper (3).jpg"; 
 const Hero = () => {
   return (
     <section className="hero bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
