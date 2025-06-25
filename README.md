@@ -16,7 +16,7 @@ Dalam repositori ini terdapat tiga folder utama yang masing-masing berisi hasil 
 ### 1. `project frontend-intern-test_Product` *(React.js Project)*  
 Proyek ini menggunakan React.js sebagai library utama.
 
-### 2. `project frontend-intern-test-` *(React.js Project)*  
+### 2. `project frontend-intern-test` *(React.js Project)*  
 Proyek kedua ini juga dikembangkan dengan React.js.
 
 ### 3. `project (frontend-intern-test-adminpage)` *(Pure HTML, CSS, JavaScript)*  
