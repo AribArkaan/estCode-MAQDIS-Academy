@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAMIM Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>HAMIM</h1>
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>DASHBOARD</h3>
+                    <ul>
+                        <li class="active"><a href="#"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>APPS & CONTENT</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-exchange-alt"></i> Transaksi</a></li>
+                        <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                        <li><a href="#"><i class="fas fa-boxes"></i> Products</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> E-Course</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> Users</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>SETTINGS</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="profile-image">
+                    <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Profile">
+                </div>
+                <div class="profile-info">
+                    <h4>ARIB</h4>
+                    <p>Trainer</p>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Dashboard Overview</h2>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Total Users</h3>
+                        <p class="stat-value">50,088</p>
+                        <p class="stat-change positive">+12% from last month</p>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Activation Code</h3>
+                        <p class="stat-value">63,108</p>
+                        <p class="stat-change positive">+8% from last month</p>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Annual Revenue</h3>
+                        <p class="stat-value">Rp11,889,000</p>
+                        <p class="stat-change positive">+24% from last year</p>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Active Sessions</h3>
+                        <p class="stat-value">1,245</p>
+                        <p class="stat-change negative">-5% from yesterday</p>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>User Growth This Year</h3>
+                        <select class="chart-filter">
+                            <option>2023</option>
+                            <option>2022</option>
+                            <option>2021</option>
+                        </select>
+                    </div>
+                    <canvas id="userGrowthChart"></canvas>
+                </div>
+                
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Transactions Per Month</h3>
+                        <select class="chart-filter">
+                            <option>Last 12 Months</option>
+                            <option>Last 6 Months</option>
+                            <option>Last 3 Months</option>
+                        </select>
+                    </div>
+                    <canvas id="transactionsChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="tables-grid">
+                <div class="table-card">
+                    <div class="table-header">
+                        <h3>Recent Users</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Join Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                                        <span>Sarah Johnson</span>
+                                    </div>
+                                </td>
+                                <td>sarah@example.com</td>
+                                <td>15/05/2023</td>
+                                <td><span class="status active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User">
+                                        <span>Michael Chen</span>
+                                    </div>
+                                </td>
+                                <td>michael@example.com</td>
+                                <td>12/05/2023</td>
+                                <td><span class="status active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="User">
+                                        <span>Lisa Wong</span>
+                                    </div>
+                                </td>
+                                <td>lisa@example.com</td>
+                                <td>10/05/2023</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User">
+                                        <span>David Kim</span>
+                                    </div>
+                                </td>
+                                <td>david@example.com</td>
+                                <td>08/05/2023</td>
+                                <td><span class="status active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="User">
+                                        <span>Emma Davis</span>
+                                    </div>
+                                </td>
+                                <td>emma@example.com</td>
+                                <td>05/05/2023</td>
+                                <td><span class="status inactive">Inactive</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-card">
+                    <div class="table-header">
+                        <h3>Recent Transactions</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>User</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#TRX-78945</td>
+                                <td>Sarah Johnson</td>
+                                <td>Rp1,250,000</td>
+                                <td>15/05/2023</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#TRX-78944</td>
+                                <td>Michael Chen</td>
+                                <td>Rp850,000</td>
+                                <td>14/05/2023</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#TRX-78943</td>
+                                <td>Lisa Wong</td>
+                                <td>Rp2,100,000</td>
+                                <td>14/05/2023</td>
+                                <td><span class="status pending">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>#TRX-78942</td>
+                                <td>David Kim</td>
+                                <td>Rp750,000</td>
+                                <td>13/05/2023</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#TRX-78941</td>
+                                <td>Emma Davis</td>
+                                <td>Rp1,500,000</td>
+                                <td>12/05/2023</td>
+                                <td><span class="status failed">Failed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
