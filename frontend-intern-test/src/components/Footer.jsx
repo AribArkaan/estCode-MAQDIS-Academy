@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
 
         <p className="copyright text-center text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} ARIB Maqdis Website. All rights reserved.
+          &copy; {new Date().getFullYear()} ARIB Website. All rights reserved.
         </p>
       </div>
     </footer>

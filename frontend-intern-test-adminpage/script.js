@@ -1,22 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme toggle functionality
     const themeToggle = document.querySelector('.theme-toggle');
     const body = document.body;
     
     themeToggle.addEventListener('click', function() {
         body.classList.toggle('dark-theme');
-        
-        // Save theme preference to localStorage
+
         const isDark = body.classList.contains('dark-theme');
         localStorage.setItem('darkTheme', isDark);
     });
     
-    // Check for saved theme preference
     if (localStorage.getItem('darkTheme') === 'true') {
         body.classList.add('dark-theme');
     }
     
-    // Mobile menu toggle
     const mobileMenuToggle = document.createElement('div');
     mobileMenuToggle.className = 'mobile-menu-toggle';
     mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -29,17 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebar.classList.toggle('active');
     });
     
-    // Close sidebar when clicking outside on mobile
     document.addEventListener('click', function(e) {
         if (window.innerWidth <= 768 && !sidebar.contains(e.target) && e.target !== mobileMenuToggle && !mobileMenuToggle.contains(e.target)) {
             sidebar.classList.remove('active');
         }
     });
     
-    // Initialize charts
     initCharts();
     
-    // Generate dummy data for charts
     function generateData(count, min, max) {
         let data = [];
         let lastValue = Math.floor(Math.random() * (max - min + 1) + min);
@@ -59,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function initCharts() {
-        // User Growth Chart
         const userGrowthCtx = document.getElementById('userGrowthChart').getContext('2d');
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const userData = generateData(12, 2000, 5000);
@@ -115,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Transactions Chart
         const transactionsCtx = document.getElementById('transactionsChart').getContext('2d');
         const transactionData = generateData(12, 500, 2500);
         
@@ -167,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Simulate theme change event for charts
     const observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             if (mutation.attributeName === 'class') {
