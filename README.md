@@ -15,6 +15,7 @@ Dalam repositori ini terdapat tiga folder utama yang masing-masing berisi hasil 
 
 ### 1. `project frontend-intern-test_Product` *(React.js Project)*  
 Proyek ini menggunakan React.js sebagai library utama.
+URL produk dapat diakses melalui `http://127.0.0.1:5500/frontend-intern-test_Product/product/1` jumlah produk yang tersedia hingga 10 data
 
 ### 2. `project frontend-intern-test` *(React.js Project)*  
 Proyek kedua ini juga dikembangkan dengan React.js.
